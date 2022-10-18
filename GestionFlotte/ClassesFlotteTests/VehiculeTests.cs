@@ -15,11 +15,13 @@ namespace ClassesFlotte.Tests
         public void GetDernierEntretienTest()
         {
             Vehicule veh = new Vehicule("AA-123-BB", "Essence", 8);
+            Entretien ent0 = new Entretien(new DateTime(2022,10,18),11000,"Aucun entretien");
             Entretien ent1 = new Entretien(new DateTime(2020, 10, 01), 12000, "RAS");
             Entretien ent2 = new Entretien(new DateTime(2021, 05, 10), 28000, "usure freins");
 
-            // Aucun entretien pour le véhicule 
-            Assert.AreEqual(null, veh.GetDernierEntretien());
+            // Aucun entretien pour le véhicule
+            veh.AjouterEntretien(ent0);
+            Assert.AreEqual(ent0, veh.GetDernierEntretien());
 
             // Ajout d'un entretien, le dernier entretien du véhicule est ent1 
             veh.AjouterEntretien(ent1);

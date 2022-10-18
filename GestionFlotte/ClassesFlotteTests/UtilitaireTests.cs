@@ -14,13 +14,18 @@ namespace ClassesFlotte.Tests
         [TestMethod()]
         public void ChargeUtileTest()
         {
-            // TODO
+            //Utilitaire u = new Utilitaire
         }
 
         [TestMethod()]
         public void PrevoirEntretienTest()
         {
-            // TODO
+            // cas 1 : le véhicule est a entretenir
+            Utilitaire u1 = new Utilitaire(1700, 1000, 5, "AA-123-CC", "Essence", 5);
+            //int chargeUtileKg = u1.;
+            
+
+            //cas 2 : le 
         }
     }
 }

@@ -11,12 +11,21 @@ namespace ClassesFlotte
         private int ptac;   // poids total autorisé en charge en kg
         private int pav;    // poids à vide en kg
         private int volume; // volume en m3
+        private static string uneImmat;
+        private static string uneEnergie;
+        private static int unePuissance;
+
 
         /// <summary>
         /// Constructeur de la classe Utilitaire
         /// </summary>
-        
 
+        public Utilitaire (int poidTotalAutorise, int poidAVide, int volumeM3, string uneImmat, string uneEnergie, int unePuissance) : base(uneImmat, uneEnergie, unePuissance)
+        {
+            this.ptac = poidTotalAutorise;
+            this.pav = poidAVide;
+            this.volume = volumeM3;
+        }
         /// <summary>
         /// Retourne un booléen indiquant si le vehicule utilitaire est à entretenir ou non
         /// un véhicule utilitaire doit être révisé tous les ans
@@ -40,8 +49,10 @@ namespace ClassesFlotte
         /// <returns>charge utile en kg</returns>
         public int ChargeUtile()
         {
-            // TODO
-            return 0;
+            int chargeUtileKg;
+            chargeUtileKg = this.ptac - this.pav;
+            return chargeUtileKg;
+
         }
     }
 }
